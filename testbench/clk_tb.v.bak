@@ -1,0 +1,8 @@
+`timescale 1ns/1ns
+`define Clock_period 1000
+module clk_tb();
+
+	reg clk;
+	reg clk
+
+endmodule

@@ -1,0 +1,15 @@
+module picture_line_ctr(clk,sw)
+
+	input clk;
+	output reg[2:0]sw;//点阵行数控制；
+	
+	initial begin
+		sw = 3'b0;
+	end
+	
+	always@(posedge clk)
+	 if(sw < 3'b111)
+		sw = sw + 1;
+	else sw = 3'b0;
+
+endmodule;

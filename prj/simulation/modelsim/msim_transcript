@@ -1,0 +1,138 @@
+# Reading pref.tcl
+# do TEST_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/intelFPGA/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/rtl {D:/Quartus II Project/TEST/rtl/debounce.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:35 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/rtl" D:/Quartus II Project/TEST/rtl/debounce.v 
+# -- Compiling module debounce
+# 
+# Top level modules:
+# 	debounce
+# End time: 13:06:36 on Dec 15,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/rtl {D:/Quartus II Project/TEST/rtl/test.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:36 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/rtl" D:/Quartus II Project/TEST/rtl/test.v 
+# -- Compiling module test
+# 
+# Top level modules:
+# 	test
+# End time: 13:06:36 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/rtl {D:/Quartus II Project/TEST/rtl/picture.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:36 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/rtl" D:/Quartus II Project/TEST/rtl/picture.v 
+# -- Compiling module picture
+# 
+# Top level modules:
+# 	picture
+# End time: 13:06:36 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/rtl {D:/Quartus II Project/TEST/rtl/clk_divide.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:36 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/rtl" D:/Quartus II Project/TEST/rtl/clk_divide.v 
+# -- Compiling module clk_divide
+# 
+# Top level modules:
+# 	clk_divide
+# End time: 13:06:36 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/rtl {D:/Quartus II Project/TEST/rtl/cnt_10s.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:36 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/rtl" D:/Quartus II Project/TEST/rtl/cnt_10s.v 
+# -- Compiling module cnt_10s
+# 
+# Top level modules:
+# 	cnt_10s
+# End time: 13:06:36 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/rtl {D:/Quartus II Project/TEST/rtl/num.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:36 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/rtl" D:/Quartus II Project/TEST/rtl/num.v 
+# -- Compiling module num
+# 
+# Top level modules:
+# 	num
+# End time: 13:06:36 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/rtl {D:/Quartus II Project/TEST/rtl/cnt_5s.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:36 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/rtl" D:/Quartus II Project/TEST/rtl/cnt_5s.v 
+# -- Compiling module cnt_5s
+# 
+# Top level modules:
+# 	cnt_5s
+# End time: 13:06:36 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/rtl {D:/Quartus II Project/TEST/rtl/breath led.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:36 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/rtl" D:/Quartus II Project/TEST/rtl/breath led.v 
+# -- Compiling module breath_led
+# 
+# Top level modules:
+# 	breath_led
+# End time: 13:06:36 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/rtl {D:/Quartus II Project/TEST/rtl/clk_halfsecond.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:36 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/rtl" D:/Quartus II Project/TEST/rtl/clk_halfsecond.v 
+# -- Compiling module clk_halfsecond
+# 
+# Top level modules:
+# 	clk_halfsecond
+# End time: 13:06:36 on Dec 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ II\ Project/TEST/prj/../testbench {D:/Quartus II Project/TEST/prj/../testbench/clk_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:36 on Dec 15,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus II Project/TEST/prj/../testbench" D:/Quartus II Project/TEST/prj/../testbench/clk_tb.v 
+# -- Compiling module clk_tb
+# 
+# Top level modules:
+# 	clk_tb
+# End time: 13:06:37 on Dec 15,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L maxii_ver -L rtl_work -L work -voptargs="+acc"  clk_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L maxii_ver -L rtl_work -L work -voptargs=""+acc"" clk_tb 
+# Start time: 13:06:37 on Dec 15,2020
+# Loading work.clk_tb
+# Loading work.clk_divide
+# Loading work.cnt_5s
+# Loading work.cnt_10s
+# Loading work.clk_halfsecond
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'en_cnt_5s'. The port definition is at: D:/Quartus II Project/TEST/rtl/cnt_5s.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /clk_tb/clk2 File: D:/Quartus II Project/TEST/prj/../testbench/clk_tb.v Line: 11
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'en_cnt_10s'. The port definition is at: D:/Quartus II Project/TEST/rtl/cnt_10s.v(1).
+#    Time: 0 ps  Iteration: 0  Instance: /clk_tb/clk3 File: D:/Quartus II Project/TEST/prj/../testbench/clk_tb.v Line: 12
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : D:/Quartus II Project/TEST/prj/../testbench/clk_tb.v(25)
+#    Time: 12 sec  Iteration: 0  Instance: /clk_tb
+# Break in Module clk_tb at D:/Quartus II Project/TEST/prj/../testbench/clk_tb.v line 25
+# End time: 13:10:54 on Dec 15,2020, Elapsed time: 0:04:17
+# Errors: 0, Warnings: 2

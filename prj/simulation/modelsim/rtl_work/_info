@@ -1,0 +1,251 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Quartus II Project/TEST/prj/simulation/modelsim
+vbreath_led
+Z1 !s110 1608008796
+!i10b 1
+!s100 i>d]mZ[EWEKoKGzDm;c120
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IWJI1D^M=7]<k5VQl2RT2[1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1607598230
+8D:/Quartus II Project/TEST/rtl/breath led.v
+FD:/Quartus II Project/TEST/rtl/breath led.v
+!i122 7
+L0 1 55
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1608008796.000000
+!s107 D:/Quartus II Project/TEST/rtl/breath led.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/rtl|D:/Quartus II Project/TEST/rtl/breath led.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work {+incdir+D:/Quartus II Project/TEST/rtl}
+Z8 tCvgOpt 0
+vclk_divide
+R1
+!i10b 1
+!s100 >gCN`HzGOX[YPfTb6EHSZ0
+R2
+IWb5X1AfK6nKX0a9WZKU6B0
+R3
+R0
+w1606273198
+8D:/Quartus II Project/TEST/rtl/clk_divide.v
+FD:/Quartus II Project/TEST/rtl/clk_divide.v
+!i122 3
+Z9 L0 1 21
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/Quartus II Project/TEST/rtl/clk_divide.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/rtl|D:/Quartus II Project/TEST/rtl/clk_divide.v|
+!i113 1
+R6
+R7
+R8
+vclk_halfsecond
+R1
+!i10b 1
+!s100 ^JTQbiRYKEA6M2`<DL_cc1
+R2
+IN?8_UaSN@KXT?lKdC>0`X2
+R3
+R0
+w1606874530
+8D:/Quartus II Project/TEST/rtl/clk_halfsecond.v
+FD:/Quartus II Project/TEST/rtl/clk_halfsecond.v
+!i122 8
+R9
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/Quartus II Project/TEST/rtl/clk_halfsecond.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/rtl|D:/Quartus II Project/TEST/rtl/clk_halfsecond.v|
+!i113 1
+R6
+R7
+R8
+vclk_tb
+!s110 1608008797
+!i10b 1
+!s100 Dgk7XWDHPGbTOF;W;C;o40
+R2
+IfKXH;8KNlJd[N<<5:0kTO2
+R3
+R0
+w1608008782
+8D:/Quartus II Project/TEST/prj/../testbench/clk_tb.v
+FD:/Quartus II Project/TEST/prj/../testbench/clk_tb.v
+!i122 9
+L0 3 25
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/Quartus II Project/TEST/prj/../testbench/clk_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/prj/../testbench|D:/Quartus II Project/TEST/prj/../testbench/clk_tb.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work {+incdir+D:/Quartus II Project/TEST/prj/../testbench}
+R8
+vcnt_10s
+R1
+!i10b 1
+!s100 RVYBKRG8@AXhPdE9SeDQ42
+R2
+I^`f[XP7Vd:5B@WM_bW:8i3
+R3
+R0
+w1606804143
+8D:/Quartus II Project/TEST/rtl/cnt_10s.v
+FD:/Quartus II Project/TEST/rtl/cnt_10s.v
+!i122 4
+Z10 L0 1 32
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/Quartus II Project/TEST/rtl/cnt_10s.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/rtl|D:/Quartus II Project/TEST/rtl/cnt_10s.v|
+!i113 1
+R6
+R7
+R8
+vcnt_5s
+R1
+!i10b 1
+!s100 ABI`TEDl`DAh5HD]eM2<51
+R2
+I2U1gBT=NiWSizB_@AAdEz3
+R3
+R0
+w1606804086
+8D:/Quartus II Project/TEST/rtl/cnt_5s.v
+FD:/Quartus II Project/TEST/rtl/cnt_5s.v
+!i122 6
+R10
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/Quartus II Project/TEST/rtl/cnt_5s.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/rtl|D:/Quartus II Project/TEST/rtl/cnt_5s.v|
+!i113 1
+R6
+R7
+R8
+vdebounce
+R1
+!i10b 1
+!s100 D`]^:o0Hd<KHQnAZKKA010
+R2
+Ib3Zl47@lJI;Q:j<WKG?AK3
+R3
+R0
+w1607409886
+8D:/Quartus II Project/TEST/rtl/debounce.v
+FD:/Quartus II Project/TEST/rtl/debounce.v
+!i122 0
+L0 1 65
+R4
+r1
+!s85 0
+31
+!s108 1608008795.000000
+!s107 D:/Quartus II Project/TEST/rtl/debounce.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/rtl|D:/Quartus II Project/TEST/rtl/debounce.v|
+!i113 1
+R6
+R7
+R8
+vnum
+R1
+!i10b 1
+!s100 oS;1C]F[Ee1BMPOkDOXkn1
+R2
+IAN8=KZ4N81]5bgR`jGX=N3
+R3
+R0
+w1607410537
+8D:/Quartus II Project/TEST/rtl/num.v
+FD:/Quartus II Project/TEST/rtl/num.v
+!i122 5
+L0 1 70
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/Quartus II Project/TEST/rtl/num.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/rtl|D:/Quartus II Project/TEST/rtl/num.v|
+!i113 1
+R6
+R7
+R8
+vpicture
+R1
+!i10b 1
+!s100 [kbh]k;]^HJKo^CaVezmj2
+R2
+IKh`BL?nV;9Q6B;W@>jV;<2
+R3
+R0
+w1607875747
+8D:/Quartus II Project/TEST/rtl/picture.v
+FD:/Quartus II Project/TEST/rtl/picture.v
+!i122 2
+L0 1 241
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/Quartus II Project/TEST/rtl/picture.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/rtl|D:/Quartus II Project/TEST/rtl/picture.v|
+!i113 1
+R6
+R7
+R8
+vtest
+R1
+!i10b 1
+!s100 nHJaz?^3D@HWQCWAAL5jg0
+R2
+IQjR@BM6WNaVVF>cd8WJFD2
+R3
+R0
+w1607875779
+8D:/Quartus II Project/TEST/rtl/test.v
+FD:/Quartus II Project/TEST/rtl/test.v
+!i122 1
+L0 1 80
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/Quartus II Project/TEST/rtl/test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus II Project/TEST/rtl|D:/Quartus II Project/TEST/rtl/test.v|
+!i113 1
+R6
+R7
+R8

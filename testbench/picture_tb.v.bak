@@ -1,0 +1,2 @@
+`timescale 1ns/1ns
+`define Clock_period 1

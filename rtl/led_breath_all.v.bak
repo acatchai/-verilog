@@ -1,0 +1,34 @@
+module led_breath_all(state,led_G,clk)
+
+	reg[2:0]sw;
+		initial begin
+		sw = 3'b000;
+	end
+	
+	
+	
+	always@(posedge clk)begin
+		if(sw < 3'b111)
+			sw = sw + 1'b1;
+		else if(sw == 3'b111)
+			sw = 3'b000;
+		else
+			sw = 3'b000;
+	end
+	
+	always@(posedge clk)begin
+		case(sw)
+			3'b000: row = 8'b1111_1110;
+			3'b001: row = 8'b1111_1101;
+			3'b010: row = 8'b1111_1011;
+			3'b011: row = 8'b1111_0111;
+			3'b100: row = 8'b1110_1111;
+			3'b101: row = 8'b1101_1111;
+			3'b110: row = 8'b1011_1111;
+			3'b111: row = 8'b0111_1111;
+			default: ;
+		endcase
+	end
+
+
+endmodule;

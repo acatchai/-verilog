@@ -1,0 +1,617 @@
+Analysis & Synthesis report for TEST
+Thu Dec 17 13:21:07 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |test|lcd1602:comb_6|current_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: picture:pic1|breath_led:breathled1
+ 14. Parameter Settings for User Entity Instance: debounce:d1
+ 15. Parameter Settings for User Entity Instance: debounce:d2
+ 16. Parameter Settings for User Entity Instance: debounce:d3
+ 17. Port Connectivity Checks: "picture:pic1|breath_led:breathled1"
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Dec 17 13:21:07 2020       ;
+; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name               ; TEST                                        ;
+; Top-level Entity Name       ; test                                        ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 677                                         ;
+; Total pins                  ; 56                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM1270T144C5      ;                    ;
+; Top-level entity name                                            ; test               ; TEST               ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; ../rtl/lcd1602.v                 ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/lcd1602.v        ;         ;
+; ../rtl/debounce.v                ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/debounce.v       ;         ;
+; ../rtl/test.v                    ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/test.v           ;         ;
+; ../rtl/picture.v                 ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/picture.v        ;         ;
+; ../rtl/clk_divide.v              ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/clk_divide.v     ;         ;
+; ../rtl/cnt_10s.v                 ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/cnt_10s.v        ;         ;
+; ../rtl/num.v                     ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/num.v            ;         ;
+; ../rtl/cnt_5s.v                  ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/cnt_5s.v         ;         ;
+; ../rtl/breath led.v              ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/breath led.v     ;         ;
+; ../rtl/clk_halfsecond.v          ; yes             ; User Verilog HDL File  ; D:/Quartus II Project/TEST/rtl/clk_halfsecond.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 677   ;
+;     -- Combinational with no register       ; 298   ;
+;     -- Register only                        ; 48    ;
+;     -- Combinational with a register        ; 331   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 203   ;
+;     -- 3 input functions                    ; 176   ;
+;     -- 2 input functions                    ; 227   ;
+;     -- 1 input functions                    ; 21    ;
+;     -- 0 input functions                    ; 2     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 486   ;
+;     -- arithmetic mode                      ; 191   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 123   ;
+;     -- asynchronous clear/load mode         ; 143   ;
+;                                             ;       ;
+; Total registers                             ; 379   ;
+; Total logic cells in carry chains           ; 203   ;
+; I/O pins                                    ; 56    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 296   ;
+; Total fan-out                               ; 2808  ;
+; Average fan-out                             ; 3.83  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node    ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                      ; Entity Name    ; Library Name ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------+----------------+--------------+
+; |test                         ; 677 (10)    ; 379          ; 0          ; 56   ; 0            ; 298 (5)      ; 48 (1)            ; 331 (4)          ; 203 (0)         ; 0 (0)      ; |test                                    ; test           ; work         ;
+;    |clk_divide:divide1|       ; 50 (50)     ; 20           ; 0          ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 20 (20)          ; 19 (19)         ; 0 (0)      ; |test|clk_divide:divide1                 ; clk_divide     ; work         ;
+;    |clk_halfsecond:half1|     ; 46 (46)     ; 19           ; 0          ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 19 (19)          ; 18 (18)         ; 0 (0)      ; |test|clk_halfsecond:half1               ; clk_halfsecond ; work         ;
+;    |cnt_10s:cnt_10s_1|        ; 11 (11)     ; 5            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |test|cnt_10s:cnt_10s_1                  ; cnt_10s        ; work         ;
+;    |cnt_5s:cnt_5s|            ; 5 (5)       ; 4            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |test|cnt_5s:cnt_5s                      ; cnt_5s         ; work         ;
+;    |debounce:d1|              ; 26 (26)     ; 19           ; 0          ; 0    ; 0            ; 7 (7)        ; 2 (2)             ; 17 (17)          ; 15 (15)         ; 0 (0)      ; |test|debounce:d1                        ; debounce       ; work         ;
+;    |debounce:d2|              ; 26 (26)     ; 19           ; 0          ; 0    ; 0            ; 7 (7)        ; 2 (2)             ; 17 (17)          ; 15 (15)         ; 0 (0)      ; |test|debounce:d2                        ; debounce       ; work         ;
+;    |debounce:d3|              ; 25 (25)     ; 19           ; 0          ; 0    ; 0            ; 6 (6)        ; 2 (2)             ; 17 (17)          ; 15 (15)         ; 0 (0)      ; |test|debounce:d3                        ; debounce       ; work         ;
+;    |lcd1602:comb_6|           ; 187 (187)   ; 86           ; 0          ; 0    ; 0            ; 101 (101)    ; 37 (37)           ; 49 (49)          ; 36 (36)         ; 0 (0)      ; |test|lcd1602:comb_6                     ; lcd1602        ; work         ;
+;    |num:num1|                 ; 40 (40)     ; 24           ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 24 (24)          ; 10 (10)         ; 0 (0)      ; |test|num:num1                           ; num            ; work         ;
+;    |picture:pic1|             ; 251 (148)   ; 159          ; 0          ; 0    ; 0            ; 92 (40)      ; 4 (4)             ; 155 (104)        ; 75 (0)          ; 0 (0)      ; |test|picture:pic1                       ; picture        ; work         ;
+;       |breath_led:breathled1| ; 103 (103)   ; 51           ; 0          ; 0    ; 0            ; 52 (52)      ; 0 (0)             ; 51 (51)          ; 75 (75)         ; 0 (0)      ; |test|picture:pic1|breath_led:breathled1 ; breath_led     ; work         ;
++-------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |test|lcd1602:comb_6|current_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++---------------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+-------------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------------+---------------------------+-------------------------+----------------------+------------------------+-----------------------+------------------------+--------------------+
+; Name                      ; current_state.ROW2_D ; current_state.ROW2_C ; current_state.ROW2_E ; current_state.ROW2_F ; current_state.ROW2_A ; current_state.ROW2_B ; current_state.ROW2_9 ; current_state.ROW2_8 ; current_state.ROW1_E ; current_state.ROW1_D ; current_state.ROW1_F ; current_state.ROW2_ADDR ; current_state.ROW1_B ; current_state.ROW1_C ; current_state.ROW1_A ; current_state.ROW1_9 ; current_state.ROW2_2 ; current_state.ROW2_3 ; current_state.ROW2_1 ; current_state.ROW2_0 ; current_state.ROW2_5 ; current_state.ROW2_4 ; current_state.ROW2_6 ; current_state.ROW2_7 ; current_state.ROW1_3 ; current_state.ROW1_4 ; current_state.ROW1_2 ; current_state.ROW1_1 ; current_state.ROW1_6 ; current_state.ROW1_5 ; current_state.ROW1_7 ; current_state.ROW1_8 ; current_state.CURSOR_SET2 ; current_state.CURSOR_SET1 ; current_state.ROW1_ADDR ; current_state.ROW1_0 ; current_state.DISP_OFF ; current_state.CLR_SCR ; current_state.DISP_SET ; current_state.IDLE ;
++---------------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+-------------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------------+---------------------------+-------------------------+----------------------+------------------------+-----------------------+------------------------+--------------------+
+; current_state.IDLE        ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 0                  ;
+; current_state.DISP_SET    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 1                      ; 1                  ;
+; current_state.CLR_SCR     ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 1                     ; 0                      ; 1                  ;
+; current_state.DISP_OFF    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 1                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_0      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 1                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_ADDR   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 1                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.CURSOR_SET1 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 1                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.CURSOR_SET2 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_8      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_7      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_5      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_6      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_1      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_2      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_4      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_3      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_7      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_6      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_4      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_5      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_0      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_1      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_3      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_2      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_9      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_A      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_C      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_B      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_ADDR   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_F      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_D      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW1_E      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_8      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_9      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_B      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_A      ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_F      ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_E      ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_C      ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
+; current_state.ROW2_D      ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                       ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                         ; 0                         ; 0                       ; 0                    ; 0                      ; 0                     ; 0                      ; 1                  ;
++---------------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+-------------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------------+---------------------------+-------------------------+----------------------+------------------------+-----------------------+------------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++-------------------------------------------------------------------+-----------------------------------------+
+; Register name                                                     ; Reason for Removal                      ;
++-------------------------------------------------------------------+-----------------------------------------+
+; picture:pic1|line_rom2[0]                                         ; Merged with picture:pic1|line_rom2[7]   ;
+; picture:pic1|line_rom1[48,49]                                     ; Merged with picture:pic1|line_rom2[7]   ;
+; picture:pic1|line_rom2[3,52,60,64]                                ; Merged with picture:pic1|line_rom2[7]   ;
+; picture:pic1|line_rom1[88,89]                                     ; Merged with picture:pic1|line_rom2[7]   ;
+; picture:pic1|line_rom2[2]                                         ; Merged with picture:pic1|line_rom2[7]   ;
+; picture:pic1|line_rom1[127]                                       ; Merged with picture:pic1|line_rom2[7]   ;
+; picture:pic1|line_rom2[12,15,87,88,90,91,95,103,107,111..116,118] ; Merged with picture:pic1|line_rom2[7]   ;
+; picture:pic1|line_rom2[14,20,53]                                  ; Merged with picture:pic1|line_rom2[6]   ;
+; picture:pic1|line_rom1[77]                                        ; Merged with picture:pic1|line_rom2[6]   ;
+; picture:pic1|line_rom2[4,61]                                      ; Merged with picture:pic1|line_rom2[6]   ;
+; picture:pic1|line_rom1[85]                                        ; Merged with picture:pic1|line_rom2[6]   ;
+; picture:pic1|line_rom2[8,10,69]                                   ; Merged with picture:pic1|line_rom2[6]   ;
+; picture:pic1|line_rom1[107]                                       ; Merged with picture:pic1|line_rom2[6]   ;
+; picture:pic1|line_rom2[54]                                        ; Merged with picture:pic1|line_rom2[5]   ;
+; picture:pic1|line_rom1[78]                                        ; Merged with picture:pic1|line_rom2[5]   ;
+; picture:pic1|line_rom2[62]                                        ; Merged with picture:pic1|line_rom2[5]   ;
+; picture:pic1|line_rom1[86]                                        ; Merged with picture:pic1|line_rom2[5]   ;
+; picture:pic1|line_rom2[56,70]                                     ; Merged with picture:pic1|line_rom2[5]   ;
+; picture:pic1|line_rom1[72,122]                                    ; Merged with picture:pic1|line_rom2[5]   ;
+; picture:pic1|line_rom2[11]                                        ; Merged with picture:pic1|line_rom2[9]   ;
+; picture:pic1|line_rom2[119..124,126,127]                          ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom1[0..3]                                      ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom2[23]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom1[4,6..10,43,47]                             ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom2[47]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom1[11,55]                                     ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom2[27]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom1[12,14,63]                                  ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom2[55]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom1[71]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom2[57]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom1[15,79]                                     ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom2[63]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom1[16..18,87,91,95]                           ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom2[71]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom1[19,101,103,111]                            ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom2[31]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom1[20]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|line_rom2[79]                                        ; Merged with picture:pic1|line_rom2[1]   ;
+; picture:pic1|led_R[1]                                             ; Merged with picture:pic1|led_R[6]       ;
+; picture:pic1|line_rom1[97]                                        ; Merged with picture:pic1|line_rom2[13]  ;
+; picture:pic1|line_rom2[17,19,75]                                  ; Merged with picture:pic1|line_rom2[16]  ;
+; picture:pic1|line_rom2[22,24,25,45]                               ; Merged with picture:pic1|line_rom2[18]  ;
+; picture:pic1|line_rom1[61,69]                                     ; Merged with picture:pic1|line_rom2[18]  ;
+; picture:pic1|line_rom2[102,106,110]                               ; Merged with picture:pic1|line_rom2[21]  ;
+; picture:pic1|line_rom2[51]                                        ; Merged with picture:pic1|line_rom2[26]  ;
+; picture:pic1|line_rom2[30]                                        ; Merged with picture:pic1|line_rom2[28]  ;
+; picture:pic1|line_rom2[108]                                       ; Merged with picture:pic1|line_rom2[29]  ;
+; picture:pic1|line_rom1[65]                                        ; Merged with picture:pic1|line_rom2[29]  ;
+; picture:pic1|line_rom1[123]                                       ; Merged with picture:pic1|line_rom2[32]  ;
+; picture:pic1|line_rom2[33]                                        ; Merged with picture:pic1|line_rom2[32]  ;
+; picture:pic1|line_rom2[43]                                        ; Merged with picture:pic1|line_rom2[34]  ;
+; picture:pic1|line_rom1[59,75]                                     ; Merged with picture:pic1|line_rom2[34]  ;
+; picture:pic1|line_rom2[59]                                        ; Merged with picture:pic1|line_rom2[34]  ;
+; picture:pic1|line_rom1[109,113,115]                               ; Merged with picture:pic1|line_rom2[35]  ;
+; picture:pic1|line_rom2[40,41]                                     ; Merged with picture:pic1|line_rom2[35]  ;
+; picture:pic1|line_rom1[42]                                        ; Merged with picture:pic1|line_rom2[35]  ;
+; picture:pic1|line_rom1[81]                                        ; Merged with picture:pic1|line_rom2[38]  ;
+; picture:pic1|line_rom1[22..28,30..36,38..41,117,119,125]          ; Merged with picture:pic1|line_rom2[39]  ;
+; picture:pic1|line_rom1[82]                                        ; Merged with picture:pic1|line_rom2[44]  ;
+; picture:pic1|line_rom2[66]                                        ; Merged with picture:pic1|line_rom2[44]  ;
+; picture:pic1|line_rom1[60]                                        ; Merged with picture:pic1|line_rom2[44]  ;
+; picture:pic1|line_rom1[62,70,112]                                 ; Merged with picture:pic1|line_rom2[46]  ;
+; picture:pic1|line_rom2[86,96,98]                                  ; Merged with picture:pic1|line_rom2[46]  ;
+; picture:pic1|line_rom1[54,64]                                     ; Merged with picture:pic1|line_rom2[48]  ;
+; picture:pic1|line_rom1[99]                                        ; Merged with picture:pic1|line_rom2[49]  ;
+; picture:pic1|line_rom1[98]                                        ; Merged with picture:pic1|line_rom2[50]  ;
+; picture:pic1|line_rom1[74]                                        ; Merged with picture:pic1|line_rom2[58]  ;
+; picture:pic1|line_rom1[83]                                        ; Merged with picture:pic1|line_rom2[67]  ;
+; picture:pic1|line_rom1[84]                                        ; Merged with picture:pic1|line_rom2[68]  ;
+; picture:pic1|line_rom1[68,73,76,80]                               ; Merged with picture:pic1|line_rom2[72]  ;
+; picture:pic1|line_rom2[73]                                        ; Merged with picture:pic1|line_rom2[72]  ;
+; picture:pic1|line_rom2[78]                                        ; Merged with picture:pic1|line_rom2[74]  ;
+; picture:pic1|line_rom1[44,46,56,57,90,92,94,96]                   ; Merged with picture:pic1|line_rom2[76]  ;
+; picture:pic1|line_rom2[80,84,97,99]                               ; Merged with picture:pic1|line_rom2[76]  ;
+; picture:pic1|line_rom1[66,108]                                    ; Merged with picture:pic1|line_rom2[82]  ;
+; picture:pic1|line_rom2[89,92,94,100]                              ; Merged with picture:pic1|line_rom2[82]  ;
+; picture:pic1|line_rom1[120,121]                                   ; Merged with picture:pic1|line_rom2[93]  ;
+; picture:pic1|line_rom1[104,106]                                   ; Merged with picture:pic1|line_rom2[101] ;
+; picture:pic1|line_rom2[109]                                       ; Merged with picture:pic1|line_rom2[101] ;
+; picture:pic1|line_rom2[105]                                       ; Merged with picture:pic1|line_rom2[104] ;
+; picture:pic1|line_rom1[51,67]                                     ; Merged with picture:pic1|line_rom2[104] ;
+; picture:pic1|line_rom2[125]                                       ; Merged with picture:pic1|line_rom2[117] ;
+; picture:pic1|line_rom1[5,13]                                      ; Merged with picture:pic1|line_rom2[117] ;
+; picture:pic1|line_rom1[29,37]                                     ; Merged with picture:pic1|line_rom1[21]  ;
+; picture:pic1|line_rom1[110,116]                                   ; Merged with picture:pic1|line_rom1[45]  ;
+; picture:pic1|line_rom1[52]                                        ; Merged with picture:pic1|line_rom1[50]  ;
+; picture:pic1|line_rom1[118,126]                                   ; Merged with picture:pic1|line_rom1[102] ;
+; picture:pic1|line_rom1[124]                                       ; Merged with picture:pic1|line_rom1[105] ;
+; picture:pic1|line_rom2[1,39]                                      ; Merged with picture:pic1|line_rom2[7]   ;
+; picture:pic1|line_rom2[9]                                         ; Merged with picture:pic1|line_rom2[6]   ;
+; picture:pic1|line_rom2[13]                                        ; Merged with picture:pic1|line_rom2[5]   ;
+; picture:pic1|led_R[0]                                             ; Merged with picture:pic1|led_R[7]       ;
+; picture:pic1|led_R[2]                                             ; Merged with picture:pic1|led_R[5]       ;
+; picture:pic1|led_R[3]                                             ; Merged with picture:pic1|led_R[4]       ;
+; picture:pic1|line_rom2[32,72]                                     ; Merged with picture:pic1|line_rom2[16]  ;
+; picture:pic1|line_rom2[85,101]                                    ; Merged with picture:pic1|line_rom2[18]  ;
+; picture:pic1|line_rom2[46,81]                                     ; Merged with picture:pic1|line_rom2[21]  ;
+; picture:pic1|line_rom2[74]                                        ; Merged with picture:pic1|line_rom2[26]  ;
+; picture:pic1|line_rom2[93]                                        ; Merged with picture:pic1|line_rom2[28]  ;
+; picture:pic1|line_rom2[82,83]                                     ; Merged with picture:pic1|line_rom2[29]  ;
+; picture:pic1|line_rom1[50]                                        ; Merged with picture:pic1|line_rom2[34]  ;
+; picture:pic1|line_rom2[76,104]                                    ; Merged with picture:pic1|line_rom2[35]  ;
+; picture:pic1|line_rom2[68]                                        ; Merged with picture:pic1|line_rom2[38]  ;
+; picture:pic1|line_rom1[58]                                        ; Merged with picture:pic1|line_rom2[42]  ;
+; picture:pic1|line_rom2[67]                                        ; Merged with picture:pic1|line_rom2[44]  ;
+; picture:pic1|line_rom2[65]                                        ; Merged with picture:pic1|line_rom2[48]  ;
+; picture:pic1|line_rom2[50]                                        ; Merged with picture:pic1|line_rom2[49]  ;
+; picture:pic1|line_rom1[105]                                       ; Merged with picture:pic1|line_rom2[77]  ;
+; picture:pic1|line_rom1[21,102]                                    ; Merged with picture:pic1|line_rom2[117] ;
+; picture:pic1|line_rom1[93]                                        ; Merged with picture:pic1|line_rom1[45]  ;
+; picture:pic1|line_rom2[7]                                         ; Stuck at GND due to stuck port data_in  ;
+; picture:pic1|line_rom2[117]                                       ; Stuck at VCC due to stuck port data_in  ;
+; picture:pic1|sw[0]                                                ; Merged with num:num1|DS[4]              ;
+; lcd1602:comb_6|current_state~44                                   ; Lost fanout                             ;
+; lcd1602:comb_6|current_state~45                                   ; Lost fanout                             ;
+; lcd1602:comb_6|current_state~46                                   ; Lost fanout                             ;
+; lcd1602:comb_6|current_state~47                                   ; Lost fanout                             ;
+; lcd1602:comb_6|current_state~48                                   ; Lost fanout                             ;
+; lcd1602:comb_6|current_state~49                                   ; Lost fanout                             ;
+; lcd1602:comb_6|current_state~50                                   ; Lost fanout                             ;
+; lcd1602:comb_6|current_state~51                                   ; Lost fanout                             ;
+; picture:pic1|line_rom2[26]                                        ; Merged with picture:pic1|line_rom2[77]  ;
+; cnt_5s:cnt_5s|cnt_5s_[3]                                          ; Stuck at GND due to stuck port data_in  ;
+; picture:pic1|line_rom1[114]                                       ; Merged with picture:pic1|line_rom2[16]  ;
+; Total Number of Removed Registers = 249                           ;                                         ;
++-------------------------------------------------------------------+-----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 379   ;
+; Number of registers using Synchronous Clear  ; 115   ;
+; Number of registers using Synchronous Load   ; 23    ;
+; Number of registers using Asynchronous Clear ; 143   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 227   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; num:num1|DS[5]                          ; 3       ;
+; picture:pic1|right_line4[0]             ; 2       ;
+; picture:pic1|left_line4[1]              ; 2       ;
+; picture:pic1|right_line4[1]             ; 2       ;
+; picture:pic1|right_line3[1]             ; 2       ;
+; picture:pic1|left_line4[2]              ; 2       ;
+; picture:pic1|right_line4[2]             ; 2       ;
+; picture:pic1|right_line2[2]             ; 2       ;
+; picture:pic1|right_line3[2]             ; 2       ;
+; picture:pic1|left_line4[3]              ; 2       ;
+; picture:pic1|right_line4[3]             ; 2       ;
+; picture:pic1|right_line2[3]             ; 2       ;
+; picture:pic1|right_line1[3]             ; 2       ;
+; picture:pic1|right_line3[3]             ; 2       ;
+; picture:pic1|left_line1[4]              ; 2       ;
+; picture:pic1|left_line2[4]              ; 2       ;
+; picture:pic1|left_line4[4]              ; 2       ;
+; picture:pic1|left_line3[4]              ; 2       ;
+; picture:pic1|right_line4[4]             ; 2       ;
+; picture:pic1|left_line2[5]              ; 2       ;
+; picture:pic1|left_line4[5]              ; 2       ;
+; picture:pic1|left_line3[5]              ; 2       ;
+; picture:pic1|right_line4[5]             ; 2       ;
+; picture:pic1|left_line4[6]              ; 2       ;
+; picture:pic1|left_line3[6]              ; 2       ;
+; picture:pic1|right_line4[6]             ; 2       ;
+; picture:pic1|left_line4[7]              ; 2       ;
+; clk_halfsecond:half1|clk_halfs          ; 65      ;
+; clk_divide:divide1|clk_out              ; 20      ;
+; Total number of inverted registers = 29 ;         ;
++-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |test|picture:pic1|breath_led:breathled1|cnt2[2] ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |test|clk_halfsecond:half1|cnt[13]               ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |test|clk_divide:divide1|cnt[2]                  ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |test|lcd1602:comb_6|count2[2]                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |test|num:num1|cnt[3]                            ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |test|picture:pic1|line_rom2[16]                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |test|cnt_5s:cnt_5s|cnt_5s_[1]                   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |test|cnt_10s:cnt_10s_1|cnt_10s_[0]              ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |test|num:num1|cnt_right[0]                      ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |test|num:num1|cnt_left[1]                       ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 51 LEs               ; 17 LEs                 ; Yes        ; |test|picture:pic1|line_rom2[44]                 ;
+; 33:1               ; 7 bits    ; 154 LEs       ; 49 LEs               ; 105 LEs                ; Yes        ; |test|num:num1|num[6]                            ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |test|state[0]                                   ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |test|picture:pic1|led_R[4]                      ;
+; 20:1               ; 8 bits    ; 104 LEs       ; 48 LEs               ; 56 LEs                 ; Yes        ; |test|picture:pic1|led_G[7]                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picture:pic1|breath_led:breathled1 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; CNT_NUM        ; 1225  ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:d1 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:d2 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:d3 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; N              ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "picture:pic1|breath_led:breathled1"                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; led[7..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Thu Dec 17 13:20:56 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TEST -c TEST
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/lcd1602.v
+    Info (12023): Found entity 1: lcd1602 File: D:/Quartus II Project/TEST/rtl/lcd1602.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/debounce2.v
+    Info (12023): Found entity 1: debounce2 File: D:/Quartus II Project/TEST/rtl/debounce2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/debounce.v
+    Info (12023): Found entity 1: debounce File: D:/Quartus II Project/TEST/rtl/debounce.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/test.v
+    Info (12023): Found entity 1: test File: D:/Quartus II Project/TEST/rtl/test.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/picture.v
+    Info (12023): Found entity 1: picture File: D:/Quartus II Project/TEST/rtl/picture.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/testbench/test_tb.v
+    Info (12023): Found entity 1: test_tb File: D:/Quartus II Project/TEST/testbench/test_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/clk_divide.v
+    Info (12023): Found entity 1: clk_divide File: D:/Quartus II Project/TEST/rtl/clk_divide.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/cnt_10s.v
+    Info (12023): Found entity 1: cnt_10s File: D:/Quartus II Project/TEST/rtl/cnt_10s.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/num.v
+    Info (12023): Found entity 1: num File: D:/Quartus II Project/TEST/rtl/num.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/cnt_5s.v
+    Info (12023): Found entity 1: cnt_5s File: D:/Quartus II Project/TEST/rtl/cnt_5s.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/breath led.v
+    Info (12023): Found entity 1: breath_led File: D:/Quartus II Project/TEST/rtl/breath led.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/rtl/clk_halfsecond.v
+    Info (12023): Found entity 1: clk_halfsecond File: D:/Quartus II Project/TEST/rtl/clk_halfsecond.v Line: 1
+Warning (10274): Verilog HDL macro warning at picture_tb.v(3): overriding existing definition for macro "Clock_period", which was defined in "../testbench/test_tb.v", line 3 File: D:/Quartus II Project/TEST/testbench/picture_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/testbench/picture_tb.v
+    Info (12023): Found entity 1: picture_tb File: D:/Quartus II Project/TEST/testbench/picture_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/testbench/num_tb.v
+    Info (12023): Found entity 1: num_tb File: D:/Quartus II Project/TEST/testbench/num_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /quartus ii project/test/testbench/clk_tb.v
+    Info (12023): Found entity 1: clk_tb File: D:/Quartus II Project/TEST/testbench/clk_tb.v Line: 3
+Critical Warning (10846): Verilog HDL Instantiation warning at test.v(63): instance has no name File: D:/Quartus II Project/TEST/rtl/test.v Line: 63
+Info (12127): Elaborating entity "test" for the top level hierarchy
+Info (12128): Elaborating entity "picture" for hierarchy "picture:pic1" File: D:/Quartus II Project/TEST/rtl/test.v Line: 42
+Info (12128): Elaborating entity "breath_led" for hierarchy "picture:pic1|breath_led:breathled1" File: D:/Quartus II Project/TEST/rtl/picture.v Line: 14
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:d1" File: D:/Quartus II Project/TEST/rtl/test.v Line: 43
+Info (12128): Elaborating entity "clk_divide" for hierarchy "clk_divide:divide1" File: D:/Quartus II Project/TEST/rtl/test.v Line: 46
+Warning (10230): Verilog HDL assignment warning at clk_divide.v(14): truncated value with size 32 to match size of target (19) File: D:/Quartus II Project/TEST/rtl/clk_divide.v Line: 14
+Info (12128): Elaborating entity "cnt_10s" for hierarchy "cnt_10s:cnt_10s_1" File: D:/Quartus II Project/TEST/rtl/test.v Line: 47
+Info (12128): Elaborating entity "cnt_5s" for hierarchy "cnt_5s:cnt_5s" File: D:/Quartus II Project/TEST/rtl/test.v Line: 48
+Info (12128): Elaborating entity "num" for hierarchy "num:num1" File: D:/Quartus II Project/TEST/rtl/test.v Line: 49
+Warning (10230): Verilog HDL assignment warning at num.v(30): truncated value with size 32 to match size of target (5) File: D:/Quartus II Project/TEST/rtl/num.v Line: 30
+Warning (10230): Verilog HDL assignment warning at num.v(33): truncated value with size 32 to match size of target (5) File: D:/Quartus II Project/TEST/rtl/num.v Line: 33
+Info (12128): Elaborating entity "clk_halfsecond" for hierarchy "clk_halfsecond:half1" File: D:/Quartus II Project/TEST/rtl/test.v Line: 50
+Warning (10230): Verilog HDL assignment warning at clk_halfsecond.v(14): truncated value with size 32 to match size of target (18) File: D:/Quartus II Project/TEST/rtl/clk_halfsecond.v Line: 14
+Info (12128): Elaborating entity "lcd1602" for hierarchy "lcd1602:comb_6" File: D:/Quartus II Project/TEST/rtl/test.v Line: 63
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lcd_RW" is stuck at GND File: D:/Quartus II Project/TEST/rtl/test.v Line: 28
+    Warning (13410): Pin "DS[0]" is stuck at VCC File: D:/Quartus II Project/TEST/rtl/test.v Line: 25
+    Warning (13410): Pin "DS[1]" is stuck at VCC File: D:/Quartus II Project/TEST/rtl/test.v Line: 25
+    Warning (13410): Pin "DS[2]" is stuck at VCC File: D:/Quartus II Project/TEST/rtl/test.v Line: 25
+    Warning (13410): Pin "DS[3]" is stuck at VCC File: D:/Quartus II Project/TEST/rtl/test.v Line: 25
+    Warning (13410): Pin "DS[6]" is stuck at VCC File: D:/Quartus II Project/TEST/rtl/test.v Line: 25
+    Warning (13410): Pin "DS[7]" is stuck at VCC File: D:/Quartus II Project/TEST/rtl/test.v Line: 25
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 733 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 50 output pins
+    Info (21061): Implemented 677 logic cells
+Info (144001): Generated suppressed messages file D:/Quartus II Project/TEST/prj/output_files/TEST.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4713 megabytes
+    Info: Processing ended: Thu Dec 17 13:21:07 2020
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:25
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Quartus II Project/TEST/prj/output_files/TEST.map.smsg.
+
+
